@@ -1,51 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@mipmap/paper"
-    android:layout_width="match_parent">
+    android:background="@mipmap/paper">
 
     <LinearLayout
-        android:orientation="horizontal"
-        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:padding="10dp"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:padding="10dp">
 
         <LinearLayout
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="match_parent"
+            android:layout_weight="1"
             android:gravity="center"
             android:orientation="vertical"
             android:weightSum="1">
 
             <TextView
-                android:gravity="center"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="30sp"
-                android:textStyle="bold"
-                tools:text="20 Points"
+                android:layout_marginBottom="30dp"
+                android:gravity="center"
+                android:text="team 1"
+                android:textAllCaps="true"
+                android:textColor="@color/colorTeamText"
+                android:textStyle="bold" />
+
+            <TextView
                 android:id="@+id/Score1_Text_View"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
                 android:textColor="@color/colorText"
-                />
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/Foul1_Text_View"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/colorText"
+                android:textSize="30sp"
+                android:textStyle="bold" />
 
             <Button
-                android:layout_marginTop="15dp"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:background="@drawable/circle_button"
                 android:id="@+id/addOneScore1_Button"
-                android:elevation="10dp"
-                android:text="+1" />
-            <Button
-                android:layout_marginTop="15dp"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:id="@+id/subOneScore1_Button"
-                android:text="-1"
+                android:layout_marginTop="15dp"
                 android:background="@drawable/circle_button"
+                android:elevation="10dp"
+                android:text="GOAL"
+                android:textColor="@android:color/holo_green_light" />
+
+            <Button
+                android:id="@+id/addFoul1Button"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/circle_button"
+                android:text="FOUL"
+                android:textColor="@android:color/holo_green_light"
                 />
 
 
@@ -60,45 +78,66 @@
             android:orientation="vertical">
 
             <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:gravity="center"
+                android:text="team 2"
+                android:textAllCaps="true"
+                android:textColor="@color/colorTeamText"
+                android:textStyle="bold" />
+
+            <TextView
                 android:id="@+id/Score2_Text_View"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-
                 android:textColor="@color/colorText"
                 android:textSize="30sp"
-                android:textStyle="bold"
-                tools:text="20 Points" />
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/Foul2_Text_View"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/colorText"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
 
             <Button
-                android:layout_width="60dp"
                 android:id="@+id/addOneScore2_Button"
+                android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_marginTop="15dp"
                 android:background="@drawable/circle_button"
-                android:text="+1" />
+                android:text="GOAL"
+                android:textColor="@android:color/holo_red_light" />
 
             <Button
+                android:id="@+id/addFoul2_Button"
                 android:layout_width="60dp"
-                android:id="@+id/subOneScore2_Button"
                 android:layout_height="60dp"
                 android:layout_marginTop="15dp"
                 android:background="@drawable/circle_button"
-                android:text="-1" />
+                android:text="FOUL"
+                android:textColor="@android:color/holo_red_light" />
 
         </LinearLayout>
 
     </LinearLayout>
 
     <Button
+        android:id="@+id/reset_Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
-        android:text="RESET"
-        android:background="@drawable/circle_button"
-        android:id="@+id/reset_Button"
         android:layout_marginBottom="45dp"
+        android:background="@drawable/circle_button"
+        android:text="RESET"
         />
 
 </RelativeLayout>
