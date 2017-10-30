@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     private int fouls1;
     private int fouls2;
 
+    //METHOD TO DISPLAY SCORES CORRECTLY
     private static String convString(int score) {
         String sScore = null;
         if (score == 1) {
@@ -39,6 +40,18 @@ public class MainActivity extends AppCompatActivity {
         }
         return sScore;
     }
+
+    //METHOD TO DISPLAY FOULS CORRECTLY
+    private static String convFouls(int foul) {
+        String currFoul = null;
+        if (foul == 1) {
+            currFoul = "" + foul + " foul";
+        } else {
+            currFoul = "" + foul + " fouls";
+        }
+        return currFoul;
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,15 +80,8 @@ public class MainActivity extends AppCompatActivity {
         //SETTING THE SCORE IN THE TEXTVIEW
         TV_Score1.setText(convString(score1));
         TV_Score2.setText(convString(score2));
-
-
-        //*************
-
-
-        // REVIEW CODE FROM HERE
-
-
-        //***************
+        TV_Fouls2.setText(convFouls(fouls2));
+        TV_Fouls1.setText(convFouls(fouls1));
 
 
         //SETTING CLICK LISTENERS TO BUTTONS
@@ -97,15 +103,15 @@ public class MainActivity extends AppCompatActivity {
         But_Foul1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                score1 = foulCommited(score1);
-                TV_Score1.setText(convString(score1));
+                fouls1 = foulCommited(fouls1);
+                TV_Fouls1.setText(convFouls(fouls1));
             }
         });
         But_Foul2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                score2 = foulCommited(score2);
-                TV_Score2.setText(convString(score2));
+                fouls2 = foulCommited(fouls2);
+                TV_Fouls2.setText(convFouls(fouls2));
             }
         });
 
@@ -118,10 +124,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    //INCREMENTING FOULS COMMITED
-    private void foulsCommited(int fouls){
-        fouls++;
-    }
 
     //INCREMENTING SCORE
     private int increment(int score){
@@ -135,6 +137,7 @@ public class MainActivity extends AppCompatActivity {
         return fouls;
     }
 
+
     private void resetUI(){
         score1=0;
         score2=0;
@@ -142,6 +145,8 @@ public class MainActivity extends AppCompatActivity {
         fouls2 = 0;
         TV_Score1.setText(convString(score1));
         TV_Score2.setText(convString(score2));
+        TV_Fouls2.setText(convFouls(fouls2));
+        TV_Fouls1.setText(convFouls(fouls1));
     }
 
 }
