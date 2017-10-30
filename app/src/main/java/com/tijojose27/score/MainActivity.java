@@ -59,8 +59,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //INITIALIZING VARIABLES TO 0
-        score1=0;
-        score2=0;
+        score1 = 0;
+        score2 = 0;
         fouls1 = 0;
         fouls2 = 0;
 
@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
         But_addScore1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                score1=increment(score1);
+                score1 = increment(score1);
                 TV_Score1.setText(convString(score1));
             }
         });
@@ -126,21 +126,21 @@ public class MainActivity extends AppCompatActivity {
 
 
     //INCREMENTING SCORE
-    private int increment(int score){
+    private int increment(int score) {
         int tscore = ++score;
         return tscore;
     }
 
-    //
+    //incrementing FOULS
     private int foulCommited(int fouls) {
         fouls++;
         return fouls;
     }
 
-
-    private void resetUI(){
-        score1=0;
-        score2=0;
+    //RESETING SCORE AND FOULS
+    private void resetUI() {
+        score1 = 0;
+        score2 = 0;
         fouls1 = 0;
         fouls2 = 0;
         TV_Score1.setText(convString(score1));
